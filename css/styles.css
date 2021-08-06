@@ -1,0 +1,247 @@
+html, body {
+  font-family: Inter, sans-serif;
+  min-height: 100%;
+  font-size: 16px;
+}
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.9rem;
+  line-height: 36px;
+  color: #323031;
+  margin-bottom: 20px;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #8692A6;
+}
+.form-group {
+  margin: 20px 0 35px 0;
+}
+.form-control {
+  padding: 1.1rem 1.2rem;
+  background-color: #fff;
+  border: 1px solid #8692A6;
+  box-shadow: 0px 4px 10px 3px rgba(155, 151, 153, 0.11);
+  border-radius: 6px;
+  width: 100%;
+  display: block;
+  transition: all .5s ease-in-out linear;
+}
+.form-control:focus {
+  border: 1px solid #138C01;
+  box-shadow: 0px 4px 10px 3px rgba(19, 140, 1, 0.11);
+  transition: all .6s ease-in-out linear;
+  outline: none;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  padding: 1.1rem .8rem;
+  background-color: #696F79;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #138C01;
+  box-shadow: 0px 4px 8px rgba(19, 140, 1, 0.18), 0px 0px 2px rgba(19, 140, 1, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  transition: color .6s linear;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #696F79;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.mobile-only {
+  padding: 20px 30px;
+}
+
+.desktop-quote {
+  width: 45%;
+  position: relative;
+  background: linear-gradient(0deg, rgba(59, 77, 57, 0.9), rgba(59, 77, 57, 0.9)), url('/images/people.jpg') no-repeat;
+  background-size: cover;
+  padding: 40px 60px;
+}
+
+.content {
+  width: 55%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  width: 60%;
+}
+
+.logo {
+  position: relative;
+  left: -20px;
+}
+
+.quote p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2em;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+.quote p::before {
+  content: open-quote;
+  font-size: 3.8rem;
+  display: block;
+  position: relative;
+  top: 20px;
+  font-family: 'Gayathri', sans-serif;
+}
+
+.quote h4 {
+  margin-top: 25px;
+  font-weight: 500;
+  font-size: 1.09em;
+  line-height: 22px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.intro {
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.secure-protect {
+  color: #8692A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-icon {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/**
+* Medium sized screen laptops.
+*/
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .desktop-quote {
+    width: 50%;
+  }
+
+  .content {
+    width: 50%;
+    height: 100%;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    padding: 10px 50px;
+  }
+}
+
+/**
+* Small screen sizes (phones, tablets, and mini PCs).
+*/
+@media screen and (max-width: 992px) {
+  body {
+    background: linear-gradient(0deg, rgba(59, 77, 57, 0.9), rgba(59, 77, 57, 0.9)), url('/images/people.jpg') no-repeat;
+    background-size: cover;
+    font-size: 14px;
+    padding-bottom: 60px;
+  }
+  .container {
+    display: block;
+  }
+  .desktop-quote {
+    display: none;
+  }
+  .content {
+    width: auto;
+    padding: 10px 20px;
+  }
+  .content-wrapper {
+    width: 100%;
+    padding: 30px 30px;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+  }
+  .intro {
+    text-align: center;
+  }
+
+  .quote p {
+    font-size: .88rem;
+    text-align: center;
+  }
+
+  .quote p:before {
+    text-align: left;
+    top: 30px;
+  }
+
+  .secure-protect {
+    font-size: .7rem;
+  }
+}
+
+/**
+* Tablet and bigger screens.
+*/
+@media screen and (min-width: 768px) {
+  .intro {
+    margin-bottom: 40px;
+  }
+
+  .desktop-quote {
+    padding: 40px 100px;
+  }
+  .quote {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .container {
+    height: 100%;
+  }
+}
+
+/**
+ * Utilities classes
+*/
+.h-100 {
+  height: 100%;
+}
+
+.h-50 {
+  height: 50%;
+}
