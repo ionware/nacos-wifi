@@ -3,6 +3,21 @@ html, body {
   min-height: 100%;
   font-size: 16px;
 }
+
+label {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #696F79;
+  display: block;
+  margin-bottom: 10px;
+}
+
+td, th {
+  border: 1px solid gray;
+  padding: .8rem;
+}
+
 .title {
   font-style: normal;
   font-weight: bold;
@@ -57,15 +72,6 @@ html, body {
 
 .btn-block {
   width: 100%;
-}
-
-label {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 19px;
-  color: #696F79;
-  display: block;
-  margin-bottom: 10px;
 }
 
 .container {
@@ -238,10 +244,42 @@ label {
 /**
  * Utilities classes
 */
+.flex {
+  display: flex;
+}
+
 .h-100 {
   height: 100%;
 }
 
 .h-50 {
   height: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-semibold {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
 }

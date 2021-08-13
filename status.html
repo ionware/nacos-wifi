@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#048c0b">
+  $(if refresh-timeout)
+  <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+  $(endif)
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="-1">
+  <title>Your Internet Status &mdash; NACOS &mdash; KWASU</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&Gayathri:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script language="JavaScript">
+    $(if advert-pending == 'yes')
+        var popup = '';
+        function focusAdvert() {
+      if (window.focus) popup.focus();
+        }
+        function openAdvert() {
+      popup = open('$(link-advert)', 'hotspot_advert', '');
+      setTimeout("focusAdvert()", 1000);
+        }
+    $(endif)
+        function openLogout() {
+      if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+      window.close();
+      return false;
+        }
+    </script>
+</head>
+<body $(if advert-pending == 'yes')
+  onLoad="openAdvert()"
+  $(endif)>
+  <div class="container">
+    <main class="flex h-100 w-100" style="align-items: center; justify-content: center; max-width: 650px; margin: 0 auto;">
+      <div>
+        <div class="text-center" style="margin-bottom: 20px;">
+          <h4 style='font-size: 1.2em; font-weight: 700;'>
+            $(if login-by == 'trial')
+              Welcome trial user!
+            $(elif login-by != 'mac')
+              Welcome $(username)!
+            $(endif)
+          </h4>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td class="font-semibold">IP Address</td>
+              <td>$(ip)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Bytes up/down</td>
+              <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+            </tr>
+            $(if session-time-left)
+              <tr>
+                <td class="font-semibold">Uptime / Time left</td>
+                <td>$(uptime) / $(session-time-left)</td>
+              </tr>
+            $(else)
+              <tr>
+                <td class="font-semibold">Uptime</td>
+                <td>$(uptime)</td>
+              </tr>
+            $(endif)
+
+            $(if blocked == 'yes')
+              <tr>
+                <td class="font-semibold">Status</td>
+                <td>You need to see <a href="$(link-advert)" target="hotspot_advert"> see Ads to continue</a></td>
+              </tr>
+            $(elif refresh-timeout)
+              <tr>
+                <td class="font-semibold">Status refresh</td>
+                <td>$(refresh-timeout)</td>
+              </tr>  
+            $(endif)
+          </tbody>
+        </table>
+        <!-- sign out button here -->
+        <div class="text-center" style="margin-top: 20px">
+          $(if login-by-mac != 'yes')
+          <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+          <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+          <!-- end of user manager link -->
+          <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+            <button class="btn btn-primary" style="padding: 8px 15px;">Logout</button>
+          </form>
+          $(endif)
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

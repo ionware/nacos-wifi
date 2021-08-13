@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#048c0b">
+  <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="-1">
+  <title>Your Internet Status &mdash; NACOS &mdash; KWASU</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&Gayathri:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script language="JavaScript">
+        function startClock() {
+            $(if popup == 'true')
+            open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+            $(endif)
+            location.href = unescape('$(link-redirect-esc)');
+        }
+    </script>
+</head>
+<body onLoad="startClock()">
+  <div class="container">
+    <main class="flex h-100 w-100" style="align-items: center; justify-content: center;">
+      <div>
+        <div class="text-center" style="margin-bottom: 20px;">
+          <h4 class="font-semibold">You are logged in!</h4>
+        </div>
+        <p>
+          If nothing happens, click <a href="$(link-redirect)">here</a>
+        </p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
